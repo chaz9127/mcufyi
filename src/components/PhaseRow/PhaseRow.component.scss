@@ -1,0 +1,30 @@
+.phase-container {
+  color: white;
+  padding: 0 35px;
+  .phase-results-container {
+    display: flex;
+    .phase-result {
+      display: flex;
+      flex-direction: column;
+      margin-right: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      &:visited {
+        color: white;
+        text-decoration: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+      .phase-result-poster {
+        width: 200px;
+        aspect-ratio: 27/40;
+      }
+      .phase-result-title {
+        margin-top: 10px;
+      }
+    }
+  }
+}

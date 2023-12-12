@@ -1,0 +1,65 @@
+{
+  "phases": [
+    {
+      "name": "Phase One",
+      "saga": "Infinity Saga",
+      "productions": [
+        {
+          "name": "Iron Man",
+          "poster": "https://i.ebayimg.com/images/g/5ogAAOSw6JlfVPKh/s-l1600.jpg",
+          "poster2": "https://m.media-amazon.com/images/I/81SIVdnkUmL.jpg"
+        },
+        {
+          "name": "The Inredible Hulk",
+          "poster": "https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_.jpg"
+        },
+        {
+          "name": "Iron Man 2",
+          "poster": "https://img.artpal.com/35431/12-14-7-18-1-11-43m.jpg"
+        },
+        {
+          "name": "Thor",
+          "poster": "https://myhotposters.com/cdn/shop/products/mHP0042_1024x1024.jpeg?v=1571444259"
+        },
+        {
+          "name": "Captain America",
+          "poster": "https://myhotposters.com/cdn/shop/products/mHP0171_1024x1024.jpeg?v=1571444283"
+        },
+        {
+          "name": "The Avengers",
+          "poster": "https://m.media-amazon.com/images/I/81SIVdnkUmL.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Phase Two",
+      "saga": "Infinity Saga",
+      "productions": [
+        {
+          "name": "Guardians of the Galaxy",
+          "poster": "https://m.media-amazon.com/images/I/71lbFfxfMtL._AC_SL1000_.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Phase Three",
+      "saga": "Infinity Saga",
+      "productions": [
+        {
+          "name": "Avengers: Endgame",
+          "poster": "https://m.media-amazon.com/images/I/7103d-g1quL._AC_SL1050_.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Phase Four",
+      "saga": "Kang Dyanasty",
+      "productions": [
+        {
+          "name": "Spider-Man: No Way Home",
+          "poster": "https://m.media-amazon.com/images/I/81AeYFqjCTL._AC_SL1300_.jpg"
+        }
+      ]
+    }
+  ]
+}
