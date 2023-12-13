@@ -5,10 +5,24 @@ import { Featured } from './components/Featured/Featured.component';
 import { PhaseRow } from './components/PhaseRow/PhaseRow.component';
 import Phases from './TestData/phases.json';
 import { Phase } from './types';
+import { Media } from './types';
+import { apiCall } from './utils/api';
 import './App.css';
 
 function App() {
+  const getMedia = async () => {
+    const buildParams = '?sortBy=phase'
+    const data = await apiCall(`/media${buildParams}`);
+    // data.map((media: Media) => {
+      
+    // });
 
+    // data.forEach((media: Media) => {
+    //   apiCall(`/media/${media._id}`, {method: 'delete'});
+    // });
+  }
+
+  getMedia()
   return (
     <div className="App">
       <Nav/>

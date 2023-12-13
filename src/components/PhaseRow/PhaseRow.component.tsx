@@ -1,4 +1,4 @@
-import { Phase, Production } from '../../types';
+import { Phase, Media } from '../../types';
 import './PhaseRow.component.scss';
 
 type PhaseRowProps = {
@@ -6,17 +6,17 @@ type PhaseRowProps = {
 }
 
 export const PhaseRow = (props: PhaseRowProps) => {
-  const { name,  productions } = props.phase;
+  const { name,  media } = props.phase;
   const displayPhase = () => {
     return (
       <div key={name} className="phase-container">
         <h2 className="phase-title">{name}</h2>
         <div className="phase-results-container">
-          {productions.map((production: Production) => {
+          {media.map((media: Media) => {
             return (
               <a href="/" className="phase-result">
-                <img className="phase-result-poster" src={production.poster} />
-                <span className="phase-result-title" >{production.name}</span>
+                <img className="phase-result-poster" src={media.poster} />
+                <span className="phase-result-title" >{media.name}</span>
               </a>
             )
           })}

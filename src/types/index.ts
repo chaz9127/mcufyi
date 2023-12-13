@@ -1,11 +1,13 @@
 import { Phase } from './Phase';
-import { Production } from './Production';
+import { Media } from './Media';
 import { SearchResult } from './SearchResult';
 import { Featured } from './Featured';
+import { APIMethod } from './APIMethod';
 
 export type {
   Phase,
-  Production,
+  Media,
   SearchResult,
   Featured,
+  APIMethod,
 }

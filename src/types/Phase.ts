@@ -1,6 +1,6 @@
-import { Production } from './Production'
+import { Media } from './Media'
 
 export type Phase = {
   name: string,
-  productions: Production[],
+  media: Media[],
 }
