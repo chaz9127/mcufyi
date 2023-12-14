@@ -11,9 +11,9 @@ const db = require("../db/conn");
 // This section will help you get a list of all the records.
 mediaRoutes.get('/media', async (req, res) => {
   const apiParams = new URLSearchParams(req._parsedUrl.search);
-  const sortBy = apiParams.get('sortBy');
+  const sortBy = apiParams.get('sortBy'); // find a dynamic way to sort. sortBy=releaseDate,phase
   await db().then(async resp => {
-    const testThis = await resp.collection('media').find().toArray();
+    const testThis = await resp.collection('media').find().sort({ releaseDate: 1, phase: 1}).toArray();
 
     res.send(testThis);
   });
@@ -71,10 +71,7 @@ mediaRoutes.delete("/media/:id", async (req, res) => {
   await db().then(async resp => {
     const deleted = await resp.collection('media').deleteOne({ _id: new ObjectId(req.params.id) }, (err, obj) => {
       if (err) throw err;
-      console.log('obj?', obj)
     })
-
-    console.log('deleted?', deleted)
   });
   res.send({testing: 'testing'})
 //  let db_connect = dbo.getDb();

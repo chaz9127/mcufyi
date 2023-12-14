@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
-// const port = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(express.json());
 
@@ -26,21 +26,13 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
-    // await client.db(process.env.DATABASE).command(
-    //   {
-    //     insert: 'media',
-    //     documents: [
-    //       {
-    //         logoImageUrl: "/images/logos/Loki.png",
-    //         showTitle: "Loki",
-    //         watchUrl: "https://www.disneyplus.com/series/loki/6pARMvILBGzF",
-    //         watchIconUrl: "/images/logos/DisneyPlus.png",
-    //         phase: 1
-    //       }
-    //     ]
-    //   }, (err, db) => {
-    //     console.log('I DONT FUCkING K NOW', err, db)
-    //   })
+    await client.db(process.env.DATABASE).command(
+      {
+        insert: 'media',
+        documents: [],
+      }, (err, db) => {
+        
+      })
 
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
