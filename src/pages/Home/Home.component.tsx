@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import { Nav } from './components/Nav/Nav.component';
-import { Featured } from './components/Featured/Featured.component';
-import { PhaseRow } from './components/PhaseRow/PhaseRow.component';
-import Phases from './TestData/phases.json';
-import { Phase } from './types';
-import { Media } from './types';
-import { apiCall } from './utils/api';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { Featured } from '../../components/Featured/Featured.component';
+import { PhaseRow } from '../../components/PhaseRow/PhaseRow.component';
+import { Phase } from '../../types';
+import { Media } from '../../types';
+import { apiCall } from '../../utils/api';
+import './Home.scss';
 
-function App() {
+function Home() {
   const [phases, setPhases] = useState<Array<Array<Media>>>([]);
 
   useEffect(() => {
@@ -36,18 +33,12 @@ function App() {
       return phases;
     }
     getPhases();
-    // getMedia().then((data: Media[]) => {
-    //   getPhases(data).then((allPhases: Array<Array<Media>>) => {
-    //     console.log('data?', allPhases)
-    //   })
-    // })
     
   }, [])
 
   
   return (
     <div className="App">
-      <Nav/>
       <Featured />
       {Array(phases.length).fill(0).map((phaseNum: any, idx: number) => {
         console.log('phases!', phases)
@@ -63,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
