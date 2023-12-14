@@ -14,7 +14,7 @@ export const Featured = () => {
             <img src={`${process.env.PUBLIC_URL}${featuredData.featured.logoImageUrl}`} />
           </div>
           <div className="tile-button-container">
-            <button onClick={() => goTo(`${process.env.PUBLIC_URL}${featuredData.featured.showTitle}`)} className="tile-button">
+            <button onClick={() => goTo(`${process.env.PUBLIC_URL}media/${featuredData.featured.showTitle}`)} className="tile-button">
               <span className="tile-button-icon">
                 <i className="fa-solid fa-info"></i>
               </span>

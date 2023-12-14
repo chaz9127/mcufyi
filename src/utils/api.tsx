@@ -1,7 +1,7 @@
 import { SERVER_URL } from '../constants/server';
 import { APIMethod } from '../types';
 
-const apiCall = async (url: string, params?: APIMethod) => {
+const callApi = async (url: string, params?: APIMethod) => {
   const betterParams = {
     method: params?.method || 'get',
   }
@@ -13,5 +13,5 @@ const apiCall = async (url: string, params?: APIMethod) => {
 };
 
 export {
-  apiCall,
+  callApi,
 }

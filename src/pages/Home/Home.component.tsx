@@ -3,16 +3,16 @@ import { Featured } from '../../components/Featured/Featured.component';
 import { PhaseRow } from '../../components/PhaseRow/PhaseRow.component';
 import { Phase } from '../../types';
 import { Media } from '../../types';
-import { apiCall } from '../../utils/api';
+import { callApi } from '../../utils/api';
 import './Home.scss';
 
-function Home() {
+export const Home = () => {
   const [phases, setPhases] = useState<Array<Array<Media>>>([]);
 
   useEffect(() => {
     const getMedia = async () => {
       const buildParams = '?sortBy=phase'
-      const data = await apiCall(`/media${buildParams}`);
+      const data = await callApi(`/media${buildParams}`);
       return data;
     }
   
@@ -41,17 +41,13 @@ function Home() {
     <div className="App">
       <Featured />
       {Array(phases.length).fill(0).map((phaseNum: any, idx: number) => {
-        console.log('phases!', phases)
         const mediaForPhase: Media[] = phases[idx];
-        console.log('mediaForPhase?', mediaForPhase)
         const phase: Phase = {
           name: `Phase ${idx+1}`,
           media: mediaForPhase,
         }
-        return <PhaseRow phase={phase}/>
+        return <PhaseRow key={idx} phase={phase}/>
       })}
     </div>
   );
 }
-
-export default Home;

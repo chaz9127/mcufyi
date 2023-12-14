@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/Home/Home.component';
+import { Home } from './pages/Home/Home.component';
 import { Nav } from './components/Nav/Nav.component';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { MediaShow } from './pages/MediaShow/MediaShow.component';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Home/>,
+    // create error page
+  },
+  {
+    path: "/media/:title",
+    element: <MediaShow />,
     // create error page
   },
 ]);

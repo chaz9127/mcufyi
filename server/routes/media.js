@@ -18,6 +18,17 @@ mediaRoutes.get('/media', async (req, res) => {
     res.send(testThis);
   });
 });
+
+mediaRoutes.get('/media/:title', async (req, res) => {
+  console.log('===Here?')
+  // await db().then(async resp => {
+  //   console.log({req})
+  //   const testThis = await resp.collection('media').find({title: 'Loki'}).sort({ releaseDate: 1, phase: 1}).toArray();
+    
+  //   // res.send(testThis);
+  //   res.send('')
+  // });
+});
  
 // This section will help you get a single record by id
 // mediaRoutes.route("/media/:id").get((req, res) => {
