@@ -20,6 +20,8 @@ export const Home = () => {
       const allMedia: Media[] = await getMedia();
       let phases: Array<Array<Media>> = [];
       allMedia.forEach(med => {
+        // let newDate = new Date(med.releaseDate).getTime();
+        // console.log({newDate, title: med.name})
         const medPhase = med.phase-1;
         const currentPhase = phases[medPhase];
         if (currentPhase) {
@@ -40,14 +42,16 @@ export const Home = () => {
   return (
     <div className="App">
       <Featured />
-      {Array(phases.length).fill(0).map((phaseNum: any, idx: number) => {
-        const mediaForPhase: Media[] = phases[idx];
-        const phase: Phase = {
-          name: `Phase ${idx+1}`,
-          media: mediaForPhase,
-        }
-        return <PhaseRow key={idx} phase={phase}/>
-      })}
+      <div className="app-content">
+        {Array(phases.length).fill(0).map((phaseNum: any, idx: number) => {
+          const mediaForPhase: Media[] = phases[idx];
+          const phase: Phase = {
+            name: `Phase ${idx+1}`,
+            media: mediaForPhase,
+          }
+          return <PhaseRow key={idx} phase={phase}/>
+        })}
+      </div>
     </div>
   );
 }

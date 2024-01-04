@@ -1,4 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
+var fs = require('fs');
+var mediaSeed = JSON.parse(fs.readFileSync('./seed/media.json', 'utf8'));
 
 const express = require("express");
 const app = express();
@@ -26,13 +28,14 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
-    await client.db(process.env.DATABASE).command(
-      {
-        insert: 'media',
-        documents: [],
-      }, (err, db) => {
+    // Seed content
+    // await client.db(process.env.DATABASE).command(
+    //   {
+    //     insert: 'media',
+    //     documents: mediaSeed,
+    //   }, (err, db) => {
         
-      })
+    // })
 
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {

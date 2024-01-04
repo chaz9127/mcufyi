@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { MediaShow } from './pages/MediaShow/MediaShow.component';
+import { MediaInfo } from './pages/MediaInfo/MediaInfo.component';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/media/:title",
-    element: <MediaShow />,
+    element: <MediaInfo />,
     // create error page
   },
 ]);

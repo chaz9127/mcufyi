@@ -3,54 +3,90 @@
     "name": "Iron Man",
     "poster": "https://i.ebayimg.com/images/g/5ogAAOSw6JlfVPKh/s-l1600.jpg",
     "phase": 1,
-    "releaseDate": 2008
+    "releaseDate": 1209700800000,
+    "description": "A billionaire industrialist and genius inventor, Tony Stark (Robert Downey Jr.), is conducting weapons tests overseas, but terrorists kidnap him to force him to build a devastating weapon. Instead, he builds an armored suit and upends his captors. Returning to America, Stark refines the suit and uses it to combat crime and terrorism.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/8eaccf77-9e46-47f5-9b7a-fdc1e65cd1b4",
+    "trailerLink": "https://www.youtube.com/watch?v=8ugaeA-nMTc"
   },
   {
-    "name": "The Inredible Hulk",
+    "name": "The Incredible Hulk",
     "poster": "https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_.jpg",
     "phase": 1,
-    "releaseDate": 2008
+    "releaseDate": 1213329600000,
+    "description": "Scientist Bruce Banner (Edward Norton) desperately seeks a cure for the gamma radiation that contaminated his cells and turned him into The Hulk. Cut off from his true love Betty Ross (Liv Tyler) and forced to hide from his nemesis, Gen. Thunderbolt Ross (William Hurt), Banner soon comes face-to-face with a new threat: a supremely powerful enemy known as The Abomination (Tim Roth).",
+    "relatedMedia": ["Iron Man", "Iron Man 2"],
+    "playLink": "https://www.disneyplus.com/video/f324e65a-9d7d-47fb-8d87-c3ca9622f6fa",
+    "trailerLink": "https://www.youtube.com/watch?v=xbqNb2PFKKA"
   },
   {
     "name": "Iron Man 2",
     "poster": "https://img.artpal.com/35431/12-14-7-18-1-11-43m.jpg",
     "phase": 1,
-    "releaseDate": 2010
+    "releaseDate": 1273204800000,
+    "description": "With the world now aware that he is Iron Man, billionaire inventor Tony Stark (Robert Downey Jr.) faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts (Gwyneth Paltrow) and 'Rhodey' Rhodes (Don Cheadle) by his side, Tony must forge new alliances and confront a powerful new enemy.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/a085c66c-3c1e-451e-85b8-cf7474823501",
+    "trailerLink": "https://www.youtube.com/watch?v=wKtcmiifycU"
   },
   {
     "name": "Thor",
     "poster": "https://myhotposters.com/cdn/shop/products/mHP0042_1024x1024.jpeg?v=1571444259",
     "phase": 1,
-    "releaseDate": 2011
+    "releaseDate": 1304654400000,
+    "description": "As the son of Odin (Anthony Hopkins), king of the Norse gods, Thor (Chris Hemsworth) will soon inherit the throne of Asgard from his aging father. However, on the day that he is to be crowned, Thor reacts with brutality when the gods' enemies, the Frost Giants, enter the palace in violation of their treaty. As punishment, Odin banishes Thor to Earth. While Loki (Tom Hiddleston), Thor's brother, plots mischief in Asgard, Thor, now stripped of his powers, faces his greatest threat.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/ac837e8b-ab6d-46fc-8f34-86152fd905d8",
+    "trailerLink": "https://www.youtube.com/watch?v=JOddp-nlNvQ"
   },
   {
-    "name": "Captain America",
+    "name": "Captain America: The First Avengers",
     "poster": "https://myhotposters.com/cdn/shop/products/mHP0171_1024x1024.jpeg?v=1571444283",
     "phase": 1,
-    "releaseDate": 2011
+    "releaseDate": 1311048000000,
+    "description": "It is 1941 and the world is in the throes of war. Steve Rogers (Chris Evans) wants to do his part and join America's armed forces, but the military rejects him because of his small stature. Finally, Steve gets his chance when he is accepted into an experimental program that turns him into a supersoldier called Captain America. Joining forces with Bucky Barnes (Sebastian Stan) and Peggy Carter (Hayley Atwell), Captain America leads the fight against the Nazi-backed HYDRA organization.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/movies/details/6xvB6xZ4r95O",
+    "trailerLink": "https://www.youtube.com/watch?v=JerVrbLldXw"
   },
   {
     "name": "The Avengers",
     "poster": "https://m.media-amazon.com/images/I/81SIVdnkUmL.jpg",
     "phase": 1,
-    "releaseDate": 2012
+    "releaseDate": 1336104000000,
+    "description": "When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's 'dream team' are Iron Man (Robert Downey Jr.), Captain America (Chris Evans), the Hulk (Mark Ruffalo), Thor (Chris Hemsworth), the Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner).",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/c05ea526-1378-4e4b-a38e-a29968cc0def",
+    "trailerLink": "https://www.youtube.com/watch?v=eOrNdBpGMv8"
   },
   {
     "name": "Guardians of the Galaxy",
     "poster": "https://m.media-amazon.com/images/I/71lbFfxfMtL._AC_SL1000_.jpg",
     "phase": 2,
-    "releaseDate": 2014
+    "releaseDate": 1406865600000,
+    "description": "Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of relentless bounty hunters after he steals an orb coveted by Ronan, a powerful villain. To evade Ronan, Quill is forced into an uneasy truce with four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot, enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he discovers the orb's true power and the cosmic threat it poses, Quill must rally his ragtag group to save the universe.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/04667710-5866-4a77-be5d-a9f7265bdb5c",
+    "trailerLink": "https://www.youtube.com/watch?v=d96cjJhvlMA"
   },
   {
     "name": "Avengers: Endgame",
     "poster": "https://m.media-amazon.com/images/I/7103d-g1quL._AC_SL1050_.jpg",
     "phase": 3,
-    "releaseDate": 2019
+    "releaseDate": 1556251200000,
+    "description": "Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.",
+    "relatedMedia": [],
+    "playLink": "https://www.disneyplus.com/video/aa2c93d5-6e09-4e2b-84ae-9f0773cc0238",
+    "trailerLink": "https://www.youtube.com/watch?v=TcMBFSGVi1c"
   },
   {
     "name": "Spider-Man: No Way Home",
     "poster": "https://m.media-amazon.com/images/I/81AeYFqjCTL._AC_SL1300_.jpg",
     "phase": 4,
-    "releaseDate": 2021
+    "releaseDate": 1639717200000,
+    "description": "With Spider-Man's identity now revealed, our friendly neighborhood web-slinger is unmasked and no longer able to separate his normal life as Peter Parker from the high stakes of being a superhero. When Peter asks for help from Doctor Strange, the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+    "relatedMedia": [],
+    "playLink": "https://www.starz.com/us/en/movies/spider-man-no-way-home-extended-version-68160",
+    "trailerLink": "https://www.youtube.com/watch?v=JfVOs4VSpmA"
   }
 ]

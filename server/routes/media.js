@@ -10,24 +10,33 @@ const db = require("../db/conn");
  
 // This section will help you get a list of all the records.
 mediaRoutes.get('/media', async (req, res) => {
-  const apiParams = new URLSearchParams(req._parsedUrl.search);
-  const sortBy = apiParams.get('sortBy'); // find a dynamic way to sort. sortBy=releaseDate,phase
+  // const apiParams = new URLSearchParams(req._parsedUrl.search);
+  // const sortBy = apiParams.get('sortBy'); // find a dynamic way to sort. sortBy=releaseDate,phase
   await db().then(async resp => {
-    const testThis = await resp.collection('media').find().sort({ releaseDate: 1, phase: 1}).toArray();
+    const result = await resp.collection('media').find().sort({ phase: 1, releaseDate: 1}).toArray();
 
-    res.send(testThis);
+    res.send(result);
   });
 });
 
 mediaRoutes.get('/media/:title', async (req, res) => {
-  console.log('===Here?')
-  // await db().then(async resp => {
-  //   console.log({req})
-  //   const testThis = await resp.collection('media').find({title: 'Loki'}).sort({ releaseDate: 1, phase: 1}).toArray();
-    
-  //   // res.send(testThis);
-  //   res.send('')
-  // });
+  const title = req.params.title;
+  await db().then(async resp => {
+    const result = await resp.collection('media').find({name: title}).toArray();
+    res.send(result);
+  });
+});
+
+mediaRoutes.get('/media/related/:title', async (req, res) => {
+  const title = req.params.title;
+  await db().then(async resp => {
+    const mainTitle = await resp.collection('media').find({name: title}).toArray();
+    let results = [];
+    if (mainTitle[0]) {
+      results = await resp.collection('media').find({name: {$in: mainTitle[0].relatedMedia}}).toArray();
+    }
+    res.send(results);
+  });
 });
  
 // This section will help you get a single record by id

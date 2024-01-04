@@ -4,32 +4,38 @@ import { Tooltip } from 'react-tooltip'
 import { SearchBar } from '../SearchBar/SearchBar.component';
 import './Nav.component.scss';
 import Results from '../../TestData/results.json';
+import { Link } from 'react-router-dom';
 
 type SearchResult = {
   name: string,
   thumbnail: string,
 }
 
+const goTo = (url: string) => {
+  window.location.href = url;
+}
+
 export const Nav = () => {
   const [ showNavMenu, setShowNavMenu ] = useState(false);
 
-  const switchShowNavMenu = () => setShowNavMenu(!showNavMenu);
+  const switchShowNavMenu = () => {console.log('switch');setShowNavMenu(!showNavMenu)};
   const hidehShowNavMenu = (ele:any) => {
+    console.log('toggleHideShow')
     const clickedMenu = ele.target.className.includes('fa-bars');
     !clickedMenu && setShowNavMenu(false);
   };
   useEffect(() => {
-    document.getElementsByTagName('html')[0].addEventListener('click', hidehShowNavMenu, true);
+    document.getElementsByTagName('html')[0].addEventListener('click', hidehShowNavMenu, false);
 
-    return () => document.getElementsByTagName('body')[0].removeEventListener('click', hidehShowNavMenu, true);
+    return () => document.getElementsByTagName('body')[0].removeEventListener('click', hidehShowNavMenu, false);
   }, [])   
            
   return (                 
     <div className="navbar-container">
       <nav className="navbar navbar-desktop">
         <div onClick={switchShowNavMenu}><i className="fa-solid fa-bars"></i></div>
-        <div className="logo">
-          <a href="/">TheMcu.fyi</a>
+        <div onClick={() => goTo('/')} className="logo">
+          <span>TheMcu.fyi</span>
         </div>
         <SearchBar results={Results.results} />
         <div className="donate">
@@ -42,9 +48,9 @@ export const Nav = () => {
       </nav>
       {showNavMenu && <div className="nav-menu">
         <ul>
-          <li className="nav-menu-item logo-item">
+          <li onClick={() => goTo('/')} className="nav-menu-item logo-item">
             <div className="logo">
-              <a href="/">TheMcu.fyi</a>
+              <span>TheMcu.fyi</span>
             </div>
           </li>
           <li
