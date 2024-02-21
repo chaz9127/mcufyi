@@ -12,7 +12,7 @@ const SERVER_URL = (() => {
     case 'development':
       return `localhost:${SERVER_PORT}`;  
     default:
-      return `localhost:${SERVER_PORT}`;
+      return `mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;
   }
 })();
 
