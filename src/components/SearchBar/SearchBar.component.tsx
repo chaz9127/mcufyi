@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SearchResult } from '../../types';
 import './SearchBar.component.scss';
 
@@ -9,6 +9,24 @@ type SearchBarProps = {
 export const SearchBar = (props: SearchBarProps) => {
   const { results } = props;
   const [ searchTerm, setSearchTerm ] = useState('');
+  const [ showResults, setShowResults ] = useState(false);
+
+  const hideResults = (e:any) => {
+    const ignoreClasses = ['result-selection', 'searchbar-input']
+    const targetClassName = e.target.className;
+
+    const checkClassName = (target: string) => target === targetClassName
+
+    if (!ignoreClasses.some(checkClassName)) {
+      setShowResults(false);
+    }
+  }
+
+  useEffect(() => {
+    document.getElementsByTagName('html')[0].addEventListener('click', hideResults, true);
+
+    return () => document.getElementsByTagName('body')[0].removeEventListener('click', hideResults, true);
+  }, [])  
 
   return (
     <div className="searchbar">
@@ -17,11 +35,12 @@ export const SearchBar = (props: SearchBarProps) => {
         type="search"
         className="searchbar-input"
         onChange={(ele) => setSearchTerm(ele?.target?.value?.toLowerCase())}
+        onFocus={(ele) => setShowResults(true)}
       />
       <div className="searchbar-results">
         <ul className="searchbar-results-list">
           {
-            results.length > 0 && (
+            showResults && results.length > 0 && (
               results.filter((term: SearchResult) => {
                 const searchResult = term?.name?.toLowerCase();
                 const searchInput = searchTerm;
@@ -29,9 +48,14 @@ export const SearchBar = (props: SearchBarProps) => {
                 return !!searchInput && searchResult?.includes(searchInput);
               }).map(result => {
                 return(
-                  <li key={result.name}>
+                  <li
+                    className='result-selection'
+                    key={result.name}
+                    onClick={() => window.location.href = `/media/${result.name}`}
+                  >
                     {result.name}
-                  </li>)
+                  </li>
+                )
               })
             )
           }

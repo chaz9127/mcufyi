@@ -1,5 +1,5 @@
 import { Phase, Media } from '../../types';
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import './PhaseRow.component.scss';
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import "../Carousel/styles.scss";

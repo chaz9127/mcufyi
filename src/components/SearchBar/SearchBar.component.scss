@@ -6,10 +6,6 @@
   border-radius: 5px;
   &:has(.searchbar-input:focus) {
     border-color: #fff;
-
-    .searchbar-results {
-      display: block;
-    }
   }
   .fa-magnifying-glass {
     margin-left: 16px;
@@ -48,7 +44,7 @@
     }
   }
   .searchbar-results {
-    display: none;
+    display: block;
     background-color: #202020;
     width: 100%;
     position: relative;

@@ -3,13 +3,9 @@ import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import { SearchBar } from '../SearchBar/SearchBar.component';
 import './Nav.component.scss';
-import Results from '../../TestData/results.json';
 import { FeedbackModal } from '../FeedbackModal/FeedbackModal.component';
-
-type SearchResult = {
-  name: string,
-  thumbnail: string,
-}
+import { callApi } from '../../utils/api';
+import { Media } from '../../types';
 
 const goTo = (url: string) => {
   window.location.href = url;
@@ -18,12 +14,13 @@ const goTo = (url: string) => {
 export const Nav = () => {
   const [ showNavMenu, setShowNavMenu ] = useState(false);
   const [ showFeedbackModal, setShowFeedbackModal ] = useState(false);
+  const [ searchPool, setSearchPool ] = useState<Media[]>([]);
 
   const closeFeedbackModal = () => {
     setShowFeedbackModal(false);
   }
 
-  const switchShowNavMenu = () => {console.log('switch');setShowNavMenu(!showNavMenu)};
+  const switchShowNavMenu = () => {setShowNavMenu(!showNavMenu)};
   const hidehShowNavMenu = (ele:any) => {
     const clickedMenu = ele.target.className.includes('fa-bars');
     !clickedMenu && setShowNavMenu(false);
@@ -34,6 +31,22 @@ export const Nav = () => {
     return () => document.getElementsByTagName('body')[0].removeEventListener('click', hidehShowNavMenu, false);
   }, [])  
 
+  useEffect(() => {
+    const getMedia = async () => {
+      const data = await callApi(`/media`);
+      return data;
+    }
+  
+    const getSearchPool = async () => {
+      const allMedia: Media[] = await getMedia();
+      
+      setSearchPool(allMedia);
+    }
+    getSearchPool();
+    
+  }, [])
+
+  console.log('searchPool', searchPool)
   return (
     <>
       <FeedbackModal isOpen={showFeedbackModal} closeCallback={closeFeedbackModal}/> 
@@ -43,7 +56,7 @@ export const Nav = () => {
           <div onClick={() => goTo('/')} className="logo">
             <span>TheMcu.fyi</span>
           </div>
-          <SearchBar results={Results.results} />
+          <SearchBar results={searchPool} />
           <div className="donate">
             <div id="donate-button">
               <img
@@ -59,7 +72,7 @@ export const Nav = () => {
         </nav>
         <nav className="navbar navbar-mobile">
           <div onClick={switchShowNavMenu}><i className="fa-solid fa-bars"></i></div>
-          <SearchBar results={Results.results} />
+          <SearchBar results={searchPool} />
         </nav>
         {showNavMenu && <div className="nav-menu">
           <ul>
@@ -77,7 +90,7 @@ export const Nav = () => {
               <i className="fa-solid fa-user-plus nav-menu-icon"></i>
               Login / Register
             </li>
-            <li className="nav-menu-item"><i className="fa-solid fa-list nav-menu-icon"></i>Browse</li>
+            {/* <li className="nav-menu-item"><i className="fa-solid fa-list nav-menu-icon"></i>Browse</li> */}
             <li
               className="nav-menu-item"
               onClick={() => setShowFeedbackModal(true)}
