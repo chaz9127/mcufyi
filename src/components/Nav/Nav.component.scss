@@ -18,8 +18,10 @@
 
     .donate {
       width: 100%;
-      img {
+      .donate-buttom-img {
         float: right;
+        display: inline-block;
+        cursor: pointer;
       }
     }
 

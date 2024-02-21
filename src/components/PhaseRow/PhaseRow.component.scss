@@ -2,6 +2,7 @@
   color: white;
   .phase-results-container {
     display: flex;
+    overflow-x: scroll;
     .phase-result {
       display: flex;
       flex-direction: column;
