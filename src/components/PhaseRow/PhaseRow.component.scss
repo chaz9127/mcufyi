@@ -1,8 +1,7 @@
 .phase-container {
   color: white;
   .phase-results-container {
-    display: flex;
-    overflow-x: scroll;
+    overflow:hidden;
     .phase-result {
       display: flex;
       flex-direction: column;

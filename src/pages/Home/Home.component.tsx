@@ -20,8 +20,6 @@ export const Home = () => {
       const allMedia: Media[] = await getMedia();
       let phases: Array<Array<Media>> = [];
       allMedia.forEach(med => {
-        // let newDate = new Date(med.releaseDate).getTime();
-        // console.log({newDate, title: med.name})
         const medPhase = med.phase-1;
         const currentPhase = phases[medPhase];
         if (currentPhase) {
@@ -32,7 +30,6 @@ export const Home = () => {
       });
       
       setPhases(phases);
-      return phases;
     }
     getPhases();
     
