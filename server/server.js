@@ -51,8 +51,8 @@ async function run() {
 }
 
 
-app.get("/*", function (req, res) {
-  res.sendfile(
+app.get("/", function (req, res) {
+  res.sendFile(
     path.join(__dirname, "../build/index.html"),
     function (err) {
       if (err) {
