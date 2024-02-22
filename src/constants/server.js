@@ -7,15 +7,15 @@ const SERVER_PORT = (() => {
   }
 })();
 
-const domain = process.env.PUBLIC_URL || 'localhost:';
+const domain = process.env.PUBLIC_URL || 'localhost';
 
 const SERVER_URL = (() => {
   console.log('ENV = ', process.env)
   switch(process.env.NODE_ENV) {
     case 'development':
-      return `${domain}${SERVER_PORT}`;  
+      return `${domain}:${SERVER_PORT}`;  
     default:
-      return `${domain}${SERVER_PORT}`;
+      return `${domain}:${SERVER_PORT}`;
   }
 })();
 

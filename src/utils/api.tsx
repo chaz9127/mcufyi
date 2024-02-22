@@ -2,6 +2,7 @@ import { SERVER_URL } from '../constants/server';
 import { APIMethod } from '../types';
 
 const callApi = async (url: string, params?: APIMethod) => {
+
   const betterParams = {
     method: params?.method || 'get',
   }
