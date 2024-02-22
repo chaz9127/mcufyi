@@ -8,11 +8,12 @@ const SERVER_PORT = (() => {
 })();
 
 const SERVER_URL = (() => {
+  console.log('ENV = ', process.env)
   switch(process.env.NODE_ENV) {
     case 'development':
-      return `localhost:${SERVER_PORT}`;  
+      return `https://mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;  
     default:
-      return `mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;
+      return `https://mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;
   }
 })();
 
