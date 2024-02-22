@@ -1,7 +1,7 @@
 const SERVER_PORT = (() => {
   switch(process.env.NODE_ENV) {
     case 'development':
-      return '30011';  
+      return '3001';  
     default:
       return process.env.PORT || '3001';
   }
