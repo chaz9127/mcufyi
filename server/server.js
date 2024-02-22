@@ -12,9 +12,9 @@ app.use(express.json());
 
 const path = require("path");
 
-const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../build")
-app.use(express.static(buildPath));
+// const _dirname = path.dirname("");
+// const buildPath = path.join(_dirname, "../build")
+// app.use(express.static(buildPath));
 
 // Routes
 app.use(require("./routes/media"));
