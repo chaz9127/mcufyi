@@ -1,19 +1,21 @@
 const SERVER_PORT = (() => {
   switch(process.env.NODE_ENV) {
     case 'development':
-      return process.env.PORT;  
+      return '30011';  
     default:
-      return process.env.PORT;
+      return process.env.PORT || '3001';
   }
 })();
+
+const domain = process.env.PUBLIC_URL || 'localhost:';
 
 const SERVER_URL = (() => {
   console.log('ENV = ', process.env)
   switch(process.env.NODE_ENV) {
     case 'development':
-      return `https://mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;  
+      return `localhost:${SERVER_PORT}`;  
     default:
-      return `https://mcu-fyi-27c1f9e48aa7.herokuapp.com:${SERVER_PORT}`;
+      return `localhost:${SERVER_PORT}`;
   }
 })();
 
