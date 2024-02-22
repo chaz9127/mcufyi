@@ -23,7 +23,7 @@ export const PhaseRow = (props: PhaseRowProps) => {
             {media.map((media: Media) => {
               return (
                 <a key={media._id} href={`/media/${media.name}`} className="phase-result">
-                  <img alt={`${media.name} poster`} className="phase-result-poster" src={media.poster} />
+                  {/* <img alt={`${media.name} poster`} className="phase-result-poster" src={media.poster} /> */}
                   <span className="phase-result-title" >{media.name}</span>
                 </a>
               )
