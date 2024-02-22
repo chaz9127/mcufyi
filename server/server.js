@@ -10,6 +10,8 @@ require("dotenv").config({ path: "./config.env" });
 app.use(cors());
 app.use(express.json());
 
+const path = require("path");
+
 // Routes
 app.use(require("./routes/media"));
 
@@ -43,6 +45,18 @@ async function run() {
     // await client.close();
   }
 }
+
+app.get("/*", function (req, res) {
+  res.sendfile(
+    path.join(__dirname, "../build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  )
+})
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`App is listening on port ${port}.`));
 
